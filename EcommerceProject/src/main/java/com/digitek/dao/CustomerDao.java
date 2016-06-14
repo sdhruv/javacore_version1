@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 public class CustomerDao {
 	
 	public static void readCustomer()throws ClassNotFoundException, SQLException{
@@ -49,7 +50,19 @@ public class CustomerDao {
 	}
 	
 	public static void createCustomer() {
+		try{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce","root", "Shar1308");
+		Statement st = con.createStatement();
+		String sql = "CREATE DATABASE CUSTOMER1";
+		st.executeUpdate(sql);
+				
+		}catch (Exception e){
+			
+		}
 		
+		System.out.println("Database created successfully! ");
+				
 	}
 	
 	public static void updateCustomer() {
@@ -72,9 +85,10 @@ public class CustomerDao {
 	
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{ 	
-          readCustomer();
+          //readCustomer();
           //updateCustomer();
           //deleteCustomer();
+          createCustomer();
           
 		}
 		
