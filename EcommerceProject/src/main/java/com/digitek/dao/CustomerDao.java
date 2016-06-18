@@ -54,14 +54,16 @@ public class CustomerDao {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce","root", "Shar1308");
 		Statement st = con.createStatement();
-		String sql = "CREATE DATABASE CUSTOMER1";
+		String sql = "insert into Customer "+ "values (10, 'Cust10', 'Cust10', 'saumil@outlook.com', 'sau2355', curdate(), 6)";
+//		st.executeUpdate("insert into Customer "+ "values (07, 'Narendra', 'Patel', 'NCP@yahoo.com', 'keya2706', curdate(), 7)");
+//		st.executeUpdate("insert into Customer "+ "values (08, 'Mayurika', 'Ghelani', 'mayur123@yahoo.com', 'may1308', curdate(), 8)");
 		st.executeUpdate(sql);
 				
 		}catch (Exception e){
 			
 		}
 		
-		System.out.println("Database created successfully! ");
+		System.out.println("Customer created successfully! ");
 				
 	}
 	
@@ -71,9 +73,7 @@ public class CustomerDao {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce","root", "Shar1308");
 		Statement st = con.createStatement();
-		st.executeUpdate("insert into Customer "+ "values (06, 'Saumil', 'Mehta', 'saumil@outlook.com', 'sau2355', curdate(), 6)");
-		st.executeUpdate("insert into Customer "+ "values (07, 'Narendra', 'Patel', 'NCP@yahoo.com', 'keya2706', curdate(), 7)");
-		st.executeUpdate("insert into Customer "+ "values (08, 'Mayurika', 'Ghelani', 'mayur123@yahoo.com', 'may1308', curdate(), 8)");
+		
 		con.close();
 		} catch (Exception e){
 		
